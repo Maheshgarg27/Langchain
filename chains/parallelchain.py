@@ -1,8 +1,8 @@
-from langchain_ophenai import ChatOpenAI
+from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StructuredOutputParser
-from langchain_antropic import chatAnthropic
+from langchain_anthropic import chatAnthropic
 from langchain.schema.runnable import RunnableParallel
 
 load_dotenv()
@@ -24,7 +24,7 @@ prompt3 = PromptTemplate(
 )
 parser = StructuredOutputParser()
 
-parallel_chain = RunnableParallel(
+parallel_chain = RunnableParallel (
   'cahin1': prompt1 | model | parser,
     'chain2': prompt2 | model2 | parser
 )
